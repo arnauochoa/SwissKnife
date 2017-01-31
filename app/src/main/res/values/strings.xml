@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Swiss Knife</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">LOG IN</string>
+    <string name="register_button">SIGN IN</string>
+    <string name="register_ok_toast">You have been registered!</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+</resources>
