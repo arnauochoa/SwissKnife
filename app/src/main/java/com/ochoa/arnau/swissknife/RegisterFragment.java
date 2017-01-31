@@ -34,7 +34,15 @@ public class RegisterFragment extends Fragment implements View.OnClickListener{
                              ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false);
+        View rootview = inflater.inflate(R.layout.fragment_register, container, false);
+
+        username = (EditText) rootview.findViewById(R.id.usernameEditText);
+        password = (EditText) rootview.findViewById(R.id.passwordEditText);
+
+        reg_button = (Button) rootview.findViewById(R.id.register_button);
+        reg_button.setOnClickListener(this);
+
+        return rootview;
     }
 
     @Override
@@ -42,12 +50,6 @@ public class RegisterFragment extends Fragment implements View.OnClickListener{
         super.onAttach(context);
 
         mListener = (OnFragmentInteractionListener) context;
-
-        username = (EditText) getView().findViewById(R.id.usernameEditText);
-        password = (EditText) getView().findViewById(R.id.passwordEditText);
-
-        reg_button = (Button) getView().findViewById(R.id.register_button);
-        reg_button.setOnClickListener(this);
     }
 
     @Override

@@ -31,7 +31,16 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        View rootview = inflater.inflate(R.layout.fragment_login, container, false);
+
+
+        username = (EditText) rootview.findViewById(R.id.usernameEditText);
+        password = (EditText) rootview.findViewById(R.id.passwordEditText);
+
+        login_button = (Button) rootview.findViewById(R.id.login_button);
+        login_button.setOnClickListener(this);
+
+        return rootview;
 
     }
 
@@ -45,12 +54,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
             throw new ClassCastException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
-
-        username = (EditText) getView().findViewById(R.id.usernameEditText);
-        password = (EditText) getView().findViewById(R.id.passwordEditText);
-
-        login_button = (Button) getView().findViewById(R.id.login_button);
-        login_button.setOnClickListener(this);
     }
 
     @Override
