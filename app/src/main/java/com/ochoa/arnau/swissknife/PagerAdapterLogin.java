@@ -23,6 +23,11 @@ public class PagerAdapterLogin extends FragmentPagerAdapter {
     }
 
     @Override
+    public CharSequence getPageTitle(int position) {
+        return tabTitles[position];
+    }
+
+    @Override
     public int getCount() {
         return tabTitles.length;
     }
