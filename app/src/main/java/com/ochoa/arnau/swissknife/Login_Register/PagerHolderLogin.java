@@ -1,7 +1,6 @@
-package com.ochoa.arnau.swissknife;
+package com.ochoa.arnau.swissknife.Login_Register;
 
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;
@@ -12,9 +11,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ochoa.arnau.swissknife.Data.LoginHelper;
+import com.ochoa.arnau.swissknife.R;
 
 
-public class PagerHolderLogin extends FragmentActivity implements OnFragmentInteractionListener{
+public class PagerHolderLogin extends FragmentActivity implements OnFragmentInteractionListener {
 
     LoginHelper loginHelper;
 

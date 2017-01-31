@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ochoa.arnau.swissknife.LoginFragment">
+    tools:context="com.ochoa.arnau.swissknife.Login_Register.LoginFragment">
 
     <LinearLayout
         android:orientation="vertical"

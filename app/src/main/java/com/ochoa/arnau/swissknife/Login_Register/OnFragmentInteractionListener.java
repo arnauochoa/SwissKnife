@@ -1,4 +1,4 @@
-package com.ochoa.arnau.swissknife;
+package com.ochoa.arnau.swissknife.Login_Register;
 
 import android.widget.EditText;
 

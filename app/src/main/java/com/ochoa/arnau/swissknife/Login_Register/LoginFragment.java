@@ -1,4 +1,4 @@
-package com.ochoa.arnau.swissknife;
+package com.ochoa.arnau.swissknife.Login_Register;
 
 
 import android.content.Context;
@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.ochoa.arnau.swissknife.Main_Drawer.DrawerActivity;
+import com.ochoa.arnau.swissknife.R;
 
 /**
  * A simple {@link Fragment} subclass.
