@@ -1,4 +1,4 @@
-package com.ochoa.arnau.swissknife.Memory;
+package com.ochoa.arnau.swissknife.Ranking;
 
 
 import android.os.Bundle;

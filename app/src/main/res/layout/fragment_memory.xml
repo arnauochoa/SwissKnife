@@ -4,10 +4,46 @@
     android:layout_height="match_parent"
     tools:context="com.ochoa.arnau.swissknife.Memory.MemoryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello from MemoryFragment" />
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Easy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/difficult_text_size"
+            android:textColor="@color/cardview_light_background"
+            android:background="@color/easy_background"
+            android:clickable="true"
+            android:id="@+id/easy" />
+
+        <TextView
+            android:text="Medium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/difficult_text_size"
+            android:textColor="@color/cardview_light_background"
+            android:background="@color/medium_background"
+            android:clickable="true"
+            android:id="@+id/medium" />
+
+        <TextView
+            android:text="Hard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/difficult_text_size"
+            android:textColor="@color/cardview_light_background"
+            android:background="@color/hard_background"
+            android:clickable="true"
+            android:id="@+id/hard" />
+    </LinearLayout>
 </FrameLayout>

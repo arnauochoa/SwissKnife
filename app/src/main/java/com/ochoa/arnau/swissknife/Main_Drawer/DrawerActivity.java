@@ -13,7 +13,7 @@ import android.view.MenuItem;
 
 import com.ochoa.arnau.swissknife.Calculator.CalculatorFragment;
 import com.ochoa.arnau.swissknife.Memory.MemoryFragment;
-import com.ochoa.arnau.swissknife.Memory.RankingFragment;
+import com.ochoa.arnau.swissknife.Ranking.RankingFragment;
 import com.ochoa.arnau.swissknife.Music.MusicFragment;
 import com.ochoa.arnau.swissknife.Profile.ProfileFragment;
 import com.ochoa.arnau.swissknife.R;

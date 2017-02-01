@@ -6,4 +6,7 @@
     <color name="cardview_grey_background">#cfd8dc</color>
     <color name="supp_action_background">#00ffffff</color>
     <color name="background_color">#cfd8dc</color>
+    <color name="easy_background">#b3ff99</color>
+    <color name="medium_background">#ffe699</color>
+    <color name="hard_background">#ff9999</color>
 </resources>

@@ -18,7 +18,10 @@
         <activity
             android:name=".Main_Drawer.DrawerActivity"
             android:label="@string/title_activity_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Memory.EasyMemoryActivity" />
+        <activity android:name=".Memory.MediumMemoryActivity" />
+        <activity android:name=".Memory.HardMemoryActivity"></activity>
     </application>
 
 </manifest>
