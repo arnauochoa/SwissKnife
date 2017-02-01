@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#6a8e00</color>
     <color name="colorAccent">#ed4144</color>
     <color name="cardview_grey_background">#cfd8dc</color>
+    <color name="supp_action_background">#00ffffff</color>
     <color name="background_color">#cfd8dc</color>
 </resources>

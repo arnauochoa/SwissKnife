@@ -1,0 +1,160 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.ochoa.arnau.swissknife.Profile.ProfileFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@android:drawable/sym_def_app_icon"
+                android:id="@+id/profile_img"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabSize="mini"
+                android:src="@android:drawable/ic_menu_camera"
+                android:id="@+id/edit_picture_fab"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="40dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:elevation="0dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="250dp"
+                android:layout_height="280dp"
+                android:layout_gravity="center_horizontal">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:text="Username"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/username_textView"
+                            android:gravity="center"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="30dp"
+                            android:layout_marginBottom="8dp"
+                            android:textSize="24sp"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/colorAccent" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingBottom="30dp"
+                        android:gravity="right">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:text="Times Played: 8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/timesPlayed_textView"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:text="Best Score: 125"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/bestScore_editText"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:text="Last Notification: Best Score!"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/lastNoti_editText"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:layout_weight="1"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3">
+
+                            <TextView
+                                android:text="Location: Barcelona"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/location_TextView"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="10dp"
+                                android:gravity="center"
+                                android:layout_weight="1.5"
+                                android:layout_gravity="center" />
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@android:drawable/ic_menu_mylocation"
+                                android:id="@+id/location_button"
+                                android:background="@color/supp_action_background"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="20dp"
+                                android:tint="@color/colorAccent" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </FrameLayout>
+    </LinearLayout>
+
+</FrameLayout>
