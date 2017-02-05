@@ -3,6 +3,7 @@ package com.ochoa.arnau.swissknife.Login_Register;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -37,15 +38,15 @@ public class RegisterFragment extends Fragment implements View.OnClickListener{
                              ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootview = inflater.inflate(R.layout.fragment_register, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_register, container, false);
 
-        username = (EditText) rootview.findViewById(R.id.usernameEditText);
-        password = (EditText) rootview.findViewById(R.id.passwordEditText);
+        username = (EditText) rootView.findViewById(R.id.usernameEditText);
+        password = (EditText) rootView.findViewById(R.id.passwordEditText);
 
-        reg_button = (Button) rootview.findViewById(R.id.register_button);
+        reg_button = (Button) rootView.findViewById(R.id.register_button);
         reg_button.setOnClickListener(this);
 
-        return rootview;
+        return rootView;
     }
 
     @Override
@@ -60,6 +61,12 @@ public class RegisterFragment extends Fragment implements View.OnClickListener{
         switch (v.getId()){
             case R.id.register_button:
                 mListener.addUser(username, password);
+
+                SharedPreferences settings = getActivity().getSharedPreferences(getString(R.string.app_name), 0);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("username", String.valueOf(username.getText()));
+                editor.apply();
+
                 Intent intent;
                 intent = new Intent(getActivity(), DrawerActivity.class);
                 startActivity(intent);

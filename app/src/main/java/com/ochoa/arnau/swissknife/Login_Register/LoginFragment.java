@@ -34,16 +34,16 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootview = inflater.inflate(R.layout.fragment_login, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_login, container, false);
 
 
-        username = (EditText) rootview.findViewById(R.id.usernameEditText);
-        password = (EditText) rootview.findViewById(R.id.passwordEditText);
+        username = (EditText) rootView.findViewById(R.id.usernameEditText);
+        password = (EditText) rootView.findViewById(R.id.passwordEditText);
 
-        login_button = (Button) rootview.findViewById(R.id.login_button);
+        login_button = (Button) rootView.findViewById(R.id.login_button);
         login_button.setOnClickListener(this);
 
-        return rootview;
+        return rootView;
 
     }
 

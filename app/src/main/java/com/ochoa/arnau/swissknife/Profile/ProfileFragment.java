@@ -2,6 +2,7 @@ package com.ochoa.arnau.swissknife.Profile;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.ochoa.arnau.swissknife.Main_Drawer.OnFragmentInteractionListener_Main;
 import com.ochoa.arnau.swissknife.R;
@@ -19,12 +21,13 @@ import com.ochoa.arnau.swissknife.R;
  */
 public class ProfileFragment extends Fragment implements View.OnClickListener{
 
-    FloatingActionButton edit_fab;
+    FloatingActionButton editFab;
 
-    ImageButton location_button;
+    ImageButton locationButton;
+
+    TextView usernameView;
 
     OnFragmentInteractionListener_Main mListener;
-
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -34,15 +37,21 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootview = inflater.inflate(R.layout.fragment_profile, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        edit_fab = (FloatingActionButton) rootview.findViewById(R.id.edit_picture_fab);
-        edit_fab.setOnClickListener(this);
+        editFab = (FloatingActionButton) rootView.findViewById(R.id.edit_picture_fab);
+        editFab.setOnClickListener(this);
 
-        location_button = (ImageButton) rootview.findViewById(R.id.location_button);
-        location_button.setOnClickListener(this);
+        locationButton = (ImageButton) rootView.findViewById(R.id.location_button);
+        locationButton.setOnClickListener(this);
 
-        return rootview;
+        SharedPreferences settings = getActivity().getSharedPreferences(getString(R.string.app_name), 0);
+        String username = settings.getString("username", getString(R.string.no_username));
+
+        usernameView = (TextView) rootView.findViewById(R.id.username_textView);
+        usernameView.setText(username);
+
+        return rootView;
     }
 
     @Override

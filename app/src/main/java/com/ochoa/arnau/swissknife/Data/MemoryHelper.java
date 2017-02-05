@@ -9,11 +9,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.ochoa.arnau.swissknife.R;
 
 /**
- * Created by arnau on 31/01/2017.
+ * Created by arnau on 05/02/2017.
  */
 
-public class LoginHelper extends SQLiteOpenHelper{
-
+public class MemoryHelper extends SQLiteOpenHelper{
     //Declaracion global de la version de la base de datos
     public static final int DATABASE_VERSION = 1;
 
@@ -21,35 +20,37 @@ public class LoginHelper extends SQLiteOpenHelper{
     public static final String DATABASE_NAME = String.valueOf(R.string.app_name);
 
     //Declaracion del nombre de la tabla
-    public static final String USERS_TABLE ="Users";
+    public static final String SCORES_TABLE ="Scores";
 
     //sentencia global de cracion de la base de datos
-    public static final String USERS_TABLE_CREATE = "CREATE TABLE " + USERS_TABLE +
-            " (name TEXT PRIMARY KEY UNIQUE, password TEXT);";
+    public static final String SCORES_TABLE_CREATE = "CREATE TABLE " + SCORES_TABLE +
+            " (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, level INTEGER, score INTEGER);";
 
-    public LoginHelper(Context context) {
+    public MemoryHelper(Context context) {
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
     }
 
+    // TODO: 05/02/2017 revisar funcions i afegir funcio per agafar totes les puntuacions segons el level
+
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(USERS_TABLE_CREATE);
+        db.execSQL(SCORES_TABLE_CREATE);
     }
 
-    public void createUser (ContentValues values, String tableName) {
+    public void addScore (ContentValues values) { //values -> username, level, score
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(
-                tableName,
+                SCORES_TABLE,
                 null,
                 values);
     }
 
-    public Cursor getPasswordByName(String name) {
+    public Cursor getBestScoreByName (String username){
         SQLiteDatabase db = this.getWritableDatabase();
-        String[] columns = {"password"};
-        String[] where = {name};
+        String[] columns = {"MAX(score)"};
+        String[] where = {username};
         Cursor c = db.query(
-                USERS_TABLE,  // The table to query
+                SCORES_TABLE,  // The table to query
                 columns,         // The columns to return
                 "name=?",        // The columns for the WHERE clause
                 where,           // The values for the WHERE clause

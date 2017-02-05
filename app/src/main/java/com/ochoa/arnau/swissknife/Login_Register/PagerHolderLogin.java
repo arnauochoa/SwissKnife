@@ -1,6 +1,7 @@
 package com.ochoa.arnau.swissknife.Login_Register;
 
 import android.content.ContentValues;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;
@@ -42,7 +43,7 @@ public class PagerHolderLogin extends FragmentActivity implements OnFragmentInte
 
         Cursor cursor = loginHelper.getPasswordByName(String.valueOf(username.getText().toString()));
 
-        String enteredPassword = String.valueOf(password.getText().toString());
+        String enteredPassword = String.valueOf(password.getText());
         String dbPassword = null;
 
         if (cursor.moveToFirst()) {
@@ -51,6 +52,12 @@ public class PagerHolderLogin extends FragmentActivity implements OnFragmentInte
 
         if (enteredPassword.equals(dbPassword)) {
             bool = true;
+
+            SharedPreferences settings = getSharedPreferences(getString(R.string.app_name), 0);
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putString("username", String.valueOf(username.getText()));
+            editor.apply();
+
         }
         return bool;
     }
