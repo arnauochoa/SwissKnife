@@ -30,8 +30,6 @@ public class MemoryHelper extends SQLiteOpenHelper{
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
     }
 
-    // TODO: 05/02/2017 revisar funcions i afegir funcio per agafar totes les puntuacions segons el level
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SCORES_TABLE_CREATE);

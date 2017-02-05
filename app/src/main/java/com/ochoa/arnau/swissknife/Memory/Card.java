@@ -5,7 +5,6 @@ package com.ochoa.arnau.swissknife.Memory;
  */
 
 public class Card {
-
     Integer value;
 
     boolean selected = false;

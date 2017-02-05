@@ -52,7 +52,6 @@ public class RegisterFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
         mListener = (OnFragmentInteractionListener) context;
     }
 
@@ -60,16 +59,23 @@ public class RegisterFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.register_button:
-                mListener.addUser(username, password);
+                if(String.valueOf(username.getText().toString()).equals("") ||
+                        String.valueOf(password.getText().toString()).equals("")) {
+                    mListener.emptyField();
+                }else{
+                    if (mListener.addUser(username, password)) {
+                        SharedPreferences settings = getActivity().getSharedPreferences(String.valueOf(R.string.app_name), 0);
+                        SharedPreferences.Editor editor = settings.edit();
+                        editor.putString("username", String.valueOf(username.getText().toString()));
+                        editor.apply();
 
-                SharedPreferences settings = getActivity().getSharedPreferences(getString(R.string.app_name), 0);
-                SharedPreferences.Editor editor = settings.edit();
-                editor.putString("username", String.valueOf(username.getText()));
-                editor.apply();
+                        Intent intent;
+                        intent = new Intent(getActivity(), DrawerActivity.class);
+                        startActivity(intent);
+                        getActivity().finish();
 
-                Intent intent;
-                intent = new Intent(getActivity(), DrawerActivity.class);
-                startActivity(intent);
+                    }
+                }
                 break;
         }
     }

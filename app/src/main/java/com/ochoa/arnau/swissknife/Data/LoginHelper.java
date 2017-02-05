@@ -60,6 +60,22 @@ public class LoginHelper extends SQLiteOpenHelper{
         return c;
     }
 
+    public Cursor checkIfExists(String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String[] columns = {"1"};
+        String[] where = {name};
+        Cursor c = db.query(
+                USERS_TABLE,  // The table to query
+                columns,         // The columns to return
+                "name=?",        // The columns for the WHERE clause
+                where,           // The values for the WHERE clause
+                null,            // don't group the rows
+                null,            // don't filter by row groups
+                null             // The sort order
+        );
+        return c;
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 

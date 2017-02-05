@@ -21,13 +21,14 @@ import com.ochoa.arnau.swissknife.R;
  */
 public class ProfileFragment extends Fragment implements View.OnClickListener{
 
-    FloatingActionButton editFab;
+    FloatingActionButton edit_fab;
 
-    ImageButton locationButton;
+    ImageButton location_button;
+
+    OnFragmentInteractionListener_Main mListener;
 
     TextView usernameView;
 
-    OnFragmentInteractionListener_Main mListener;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -39,14 +40,14 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        editFab = (FloatingActionButton) rootView.findViewById(R.id.edit_picture_fab);
-        editFab.setOnClickListener(this);
+        edit_fab = (FloatingActionButton) rootView.findViewById(R.id.edit_picture_fab);
+        edit_fab.setOnClickListener(this);
 
-        locationButton = (ImageButton) rootView.findViewById(R.id.location_button);
-        locationButton.setOnClickListener(this);
+        location_button = (ImageButton) rootView.findViewById(R.id.location_button);
+        location_button.setOnClickListener(this);
 
-        SharedPreferences settings = getActivity().getSharedPreferences(getString(R.string.app_name), 0);
-        String username = settings.getString("username", getString(R.string.no_username));
+        SharedPreferences settings = getActivity().getSharedPreferences(String.valueOf(R.string.app_name), Context.MODE_PRIVATE);
+        String username = settings.getString("username", "Username not found");
 
         usernameView = (TextView) rootView.findViewById(R.id.username_textView);
         usernameView.setText(username);

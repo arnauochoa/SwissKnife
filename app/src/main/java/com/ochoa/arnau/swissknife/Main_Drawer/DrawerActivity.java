@@ -1,5 +1,7 @@
 package com.ochoa.arnau.swissknife.Main_Drawer;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -12,6 +14,7 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.ochoa.arnau.swissknife.Calculator.CalculatorFragment;
+import com.ochoa.arnau.swissknife.Login_Register.PagerHolderLogin;
 import com.ochoa.arnau.swissknife.Memory.MemoryFragment;
 import com.ochoa.arnau.swissknife.Ranking.RankingFragment;
 import com.ochoa.arnau.swissknife.Music.MusicFragment;
@@ -79,7 +82,14 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
                         .replace(R.id.fragment_container, new CalculatorFragment(), "MEMORY_FRAGMENT").commit();
                 break;
             case R.id.logout:
-                // TODO: Log Out
+                SharedPreferences settings = getSharedPreferences(String.valueOf(R.string.app_name), 0);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putBoolean("UserLogged", false);
+                editor.apply();
+
+                Intent intent = new Intent(this, PagerHolderLogin.class);
+                startActivity(intent);
+                finish();
                 break;
         }
         return true;

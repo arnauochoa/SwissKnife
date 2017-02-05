@@ -3,6 +3,7 @@ package com.ochoa.arnau.swissknife.Login_Register;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -63,13 +64,23 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.login_button:
-                if (mListener.logIn(username,password)){
-                    Intent intent;
-                    intent = new Intent(getActivity(), DrawerActivity.class);
-                    startActivity(intent);
-                }
-                else{
-                    mListener.incorrectPassword();
+                if(String.valueOf(username.getText().toString()).equals("") ||
+                        String.valueOf(password.getText().toString()).equals("")) {
+                    mListener.emptyField();
+                }else{
+                    if (mListener.logIn(username, password)) {
+                        SharedPreferences settings = getActivity().getSharedPreferences(String.valueOf(R.string.app_name), 0);
+                        SharedPreferences.Editor editor = settings.edit();
+                        editor.putString("username", String.valueOf(username.getText().toString()));
+                        editor.apply();
+
+                        Intent intent;
+                        intent = new Intent(getActivity(), PagerHolderLogin.class);
+                        startActivity(intent);
+                        getActivity().finish();
+                    } else {
+                        mListener.incorrectPassword();
+                    }
                 }
         }
     }

@@ -8,7 +8,9 @@ import android.widget.EditText;
 
 public interface OnFragmentInteractionListener {
     boolean logIn(EditText username, EditText password);
-    void incorrectPassword();
 
-    void addUser(EditText username, EditText password);
+    void incorrectPassword();
+    void emptyField();
+
+    boolean addUser(EditText username, EditText password);
 }

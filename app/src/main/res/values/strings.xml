@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Swiss Knife</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="username_hint">Username</string>
     <string name="password_hint">Password</string>
@@ -10,6 +11,8 @@
     <string name="title_activity_drawer">DrawerActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="no_username">Username</string>
-
+    <string name="register_not_ok_toast">Sorry, this username already exists.</string>
+    <string name="user_not_exist">This username does not exist</string>
+    <string name="incorrect_password">Incorrect password</string>
+    <string name="empty_field">There is an empty field</string>
 </resources>
