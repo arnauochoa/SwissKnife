@@ -11,8 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ochoa.arnau.swissknife.Data.LoginHelper;
-import com.ochoa.arnau.swissknife.Data.MemoryHelper;
+import com.ochoa.arnau.swissknife.Data.DatabaseHelper;
 import com.ochoa.arnau.swissknife.R;
 
 import java.util.ArrayList;
@@ -31,7 +30,7 @@ public class EasyRankingFragment extends Fragment implements View.OnClickListene
 
     MyCustomAdapter adapter;
 
-    MemoryHelper memoryHelper;
+    DatabaseHelper databaseHelper;
 
     public EasyRankingFragment() {
         // Required empty public constructor
@@ -43,7 +42,7 @@ public class EasyRankingFragment extends Fragment implements View.OnClickListene
 
         View view = inflater.inflate(R.layout.fragment_easy_ranking, container, false);
 
-        memoryHelper = new MemoryHelper(getActivity().getApplicationContext());
+        databaseHelper = new DatabaseHelper(getActivity().getApplicationContext());
 
         players = new ArrayList<>(0);
 
@@ -56,7 +55,7 @@ public class EasyRankingFragment extends Fragment implements View.OnClickListene
     }
 
     private void setRanking() {
-        Cursor cursor = memoryHelper.getRankingByLevel("easy", "Scores");
+        Cursor cursor = databaseHelper.getRankingByLevel("easy", "Scores");
         Player pos;
         if (cursor.moveToFirst()) {
             do {

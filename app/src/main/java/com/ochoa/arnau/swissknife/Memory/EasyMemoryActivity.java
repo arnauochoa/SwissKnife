@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.material.joanbarroso.flipper.CoolImageFlipper;
-import com.ochoa.arnau.swissknife.Data.MemoryHelper;
+import com.ochoa.arnau.swissknife.Data.DatabaseHelper;
 import com.ochoa.arnau.swissknife.R;
 
 public class EasyMemoryActivity extends AppCompatActivity implements View.OnClickListener{
@@ -145,7 +145,7 @@ public class EasyMemoryActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void saveScore(int attempts) {
-        MemoryHelper memoryHelper = new MemoryHelper(getApplicationContext());
+        DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
 
         SharedPreferences settings = getSharedPreferences(String.valueOf(R.string.app_name), Context.MODE_PRIVATE);
         String username = settings.getString("username", "Username not found");
@@ -154,7 +154,7 @@ public class EasyMemoryActivity extends AppCompatActivity implements View.OnClic
         valuesToStore.put("name", username);
         valuesToStore.put("level", "easy");
         valuesToStore.put("score", attempts);
-        memoryHelper.addScore(valuesToStore, "Scores");
+        databaseHelper.addScore(valuesToStore);
     }
 
     private void restart() {

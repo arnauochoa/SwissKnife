@@ -12,7 +12,7 @@ import com.ochoa.arnau.swissknife.R;
  * Created by arnau on 31/01/2017.
  */
 
-public class LoginHelper extends SQLiteOpenHelper{
+public class DatabaseHelper extends SQLiteOpenHelper{
 
     //Declaracion global de la version de la base de datos
     public static final int DATABASE_VERSION = 1;
@@ -23,17 +23,26 @@ public class LoginHelper extends SQLiteOpenHelper{
     //Declaracion del nombre de la tabla
     public static final String USERS_TABLE ="Users";
 
+
+    //Declaracion del nombre de la tabla
+    public static final String SCORES_TABLE ="Scores";
+
     //sentencia global de cracion de la base de datos
     public static final String USERS_TABLE_CREATE = "CREATE TABLE " + USERS_TABLE +
             " (name TEXT PRIMARY KEY UNIQUE, password TEXT);";
 
-    public LoginHelper(Context context) {
+    //sentencia global de creacion de la base de datos
+    public static final String SCORES_TABLE_CREATE = "CREATE TABLE " + SCORES_TABLE +
+            " (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, level STRING, score INTEGER);";
+
+    public DatabaseHelper(Context context) {
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(USERS_TABLE_CREATE);
+        db.execSQL(SCORES_TABLE_CREATE);
     }
 
     public void createUser (ContentValues values, String tableName) {
@@ -72,6 +81,46 @@ public class LoginHelper extends SQLiteOpenHelper{
                 null,            // don't group the rows
                 null,            // don't filter by row groups
                 null             // The sort order
+        );
+        return c;
+    }
+
+    public void addScore (ContentValues values) { //values -> username, level, score
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert(
+                SCORES_TABLE,
+                null,
+                values);
+    }
+
+    public Cursor getBestScoreByName (String username){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String[] columns = {"score"};
+        String[] where = {username};
+        Cursor c = db.query(
+                SCORES_TABLE,  // The table to query
+                columns,         // The columns to return
+                "name=?",        // The columns for the WHERE clause
+                where,           // The values for the WHERE clause
+                null,            // don't group the rows
+                null,            // don't filter by row groups
+                "score ASC"             // The sort order
+        );
+        return c;
+    }
+
+    public Cursor getRankingByLevel (String level, String tableName){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String[] columns = {"name", "score"};
+        String[] where = {level};
+        Cursor c = db.query(
+                tableName,  // The table to query
+                columns,         // The columns to return
+                "level=?",        // The columns for the WHERE clause
+                where,           // The values for the WHERE clause
+                null,            // don't group the rows
+                null,            // don't filter by row groups
+                "score ASC"      // The sort order
         );
         return c;
     }

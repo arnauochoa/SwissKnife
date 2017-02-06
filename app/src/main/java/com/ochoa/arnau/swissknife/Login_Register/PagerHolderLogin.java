@@ -13,14 +13,14 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.ochoa.arnau.swissknife.Data.LoginHelper;
+import com.ochoa.arnau.swissknife.Data.DatabaseHelper;
 import com.ochoa.arnau.swissknife.Main_Drawer.DrawerActivity;
 import com.ochoa.arnau.swissknife.R;
 
 
 public class PagerHolderLogin extends FragmentActivity implements OnFragmentInteractionListener {
 
-    LoginHelper loginHelper;
+    DatabaseHelper databaseHelper;
     SharedPreferences settings;
 
     @Override
@@ -39,7 +39,7 @@ public class PagerHolderLogin extends FragmentActivity implements OnFragmentInte
         tabLayout.setTabTextColors(Color.GRAY, Color.BLACK); // TODO: canviar colors
         tabLayout.setupWithViewPager(viewPager);
 
-        loginHelper = new LoginHelper(getApplicationContext());
+        databaseHelper = new DatabaseHelper(getApplicationContext());
 
         settings = getSharedPreferences(String.valueOf(R.string.app_name), Context.MODE_PRIVATE);
         checkLogIn();
@@ -57,7 +57,7 @@ public class PagerHolderLogin extends FragmentActivity implements OnFragmentInte
     public boolean logIn(EditText username, EditText password){
         Boolean correctPsw = false;
 
-        Cursor cursor = loginHelper.getPasswordByName(String.valueOf(username.getText().toString()));
+        Cursor cursor = databaseHelper.getPasswordByName(String.valueOf(username.getText().toString()));
 
         String enteredPassword = String.valueOf(password.getText().toString());
         String dbPassword = null;
@@ -92,7 +92,7 @@ public class PagerHolderLogin extends FragmentActivity implements OnFragmentInte
     public boolean addUser(EditText username, EditText password) {
         boolean validUser = false;
 
-        Cursor cursor = loginHelper.checkIfExists(String.valueOf(username.getText().toString()));
+        Cursor cursor = databaseHelper.checkIfExists(String.valueOf(username.getText().toString()));
 
         if (!cursor.moveToFirst()) {
             validUser = true;
@@ -100,7 +100,7 @@ public class PagerHolderLogin extends FragmentActivity implements OnFragmentInte
             ContentValues valuesToStore = new ContentValues();
             valuesToStore.put("name", String.valueOf(username.getText().toString()));
             valuesToStore.put("password", String.valueOf(password.getText().toString()));
-            loginHelper.createUser(valuesToStore, "Users");
+            databaseHelper.createUser(valuesToStore, "Users");
 
             Toast.makeText(getApplicationContext(),getString(R.string.register_ok_toast), Toast.LENGTH_SHORT).show();
         }else{

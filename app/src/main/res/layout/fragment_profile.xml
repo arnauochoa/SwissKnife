@@ -89,7 +89,7 @@
                             android:layout_weight="1">
 
                             <TextView
-                                android:text="Times Played: 8"
+                                android:text="Times Played: "
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/timesPlayed_textView"
@@ -99,7 +99,7 @@
                                 android:layout_weight="1"/>
 
                             <TextView
-                                android:text="Best Score: 125"
+                                android:text="Best Score: "
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/bestScore_editText"

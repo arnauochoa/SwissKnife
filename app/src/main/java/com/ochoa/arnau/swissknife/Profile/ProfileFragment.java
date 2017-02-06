@@ -3,6 +3,7 @@ package com.ochoa.arnau.swissknife.Profile;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.ochoa.arnau.swissknife.Data.DatabaseHelper;
 import com.ochoa.arnau.swissknife.Main_Drawer.OnFragmentInteractionListener_Main;
 import com.ochoa.arnau.swissknife.R;
 
@@ -27,8 +29,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
     OnFragmentInteractionListener_Main mListener;
 
-    TextView usernameView;
+    TextView usernameView, bestScore;
 
+    DatabaseHelper databaseHelper;
+
+    int score = 0;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -39,6 +44,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
+
 
         edit_fab = (FloatingActionButton) rootView.findViewById(R.id.edit_picture_fab);
         edit_fab.setOnClickListener(this);
@@ -51,6 +57,16 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
         usernameView = (TextView) rootView.findViewById(R.id.username_textView);
         usernameView.setText(username);
+
+        databaseHelper = new DatabaseHelper(getActivity().getApplicationContext());
+
+        Cursor cursor = databaseHelper.getBestScoreByName(username);
+        if (cursor.moveToFirst()){
+            score = cursor.getInt(cursor.getColumnIndex("score"));
+        }
+
+        bestScore = (TextView) rootView.findViewById(R.id.bestScore_editText);
+        bestScore.setText("Best Score: " + String.valueOf(score));
 
         return rootView;
     }
