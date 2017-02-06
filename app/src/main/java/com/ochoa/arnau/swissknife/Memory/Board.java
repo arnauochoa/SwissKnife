@@ -70,7 +70,7 @@ public class Board {
         }
 
         List<Integer> valuesList = Arrays.asList(values);
-        Collections.shuffle(valuesList);
+        //Collections.shuffle(valuesList);
         valuesList.toArray(values);
 
         for (int i = 0; i < 2*pairs; i++){

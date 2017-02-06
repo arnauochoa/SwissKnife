@@ -125,8 +125,18 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return c;
     }
 
+    public boolean clearRankingByLevel(String level) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String[] where = {level};
+        return db.delete(
+                SCORES_TABLE,
+                "level=?",
+                where) > 0;
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
+
 }

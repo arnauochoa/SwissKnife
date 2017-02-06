@@ -16,4 +16,5 @@
     <string name="incorrect_password">Incorrect password</string>
     <string name="empty_field">There is an empty field</string>
     <string name="easy_level">easy</string>
+    <string name="unable_clear">Sorry, there was an error trying to clear the ranking</string>
 </resources>

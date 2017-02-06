@@ -35,12 +35,16 @@ public class MyCustomAdapter extends RecyclerView.Adapter<MyCustomAdapter.Adapte
         int iconLayout = players.get(position).getImage();
         switch (iconLayout){
             case 0:
-                //male
-                holder.image.setImageDrawable(holder.view.getResources().getDrawable(R.drawable.ic_adb_black_24dp));
+                holder.image.setImageDrawable(holder.view.getResources().getDrawable(R.drawable.ic_looks_one_black_24dp));
                 break;
             case 1:
-                //female
-                holder.image.setImageDrawable(holder.view.getResources().getDrawable(R.drawable.ic_android_black_24dp));
+                holder.image.setImageDrawable(holder.view.getResources().getDrawable(R.drawable.ic_looks_two_black_24dp));
+                break;
+            case 2:
+                holder.image.setImageDrawable(holder.view.getResources().getDrawable(R.drawable.ic_looks_3_black_24dp));
+                break;
+            default:
+                holder.image.setImageDrawable(holder.view.getResources().getDrawable(R.drawable.ic_indeterminate_check_box_black_24dp));
                 break;
         }
         holder.username.setText(players.get(position).getUsername());
