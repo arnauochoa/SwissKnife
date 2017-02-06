@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -92,9 +93,11 @@ public class EasyRankingFragment extends Fragment implements View.OnClickListene
                     adapter.setPlayers(players);
                     adapter.notifyDataSetChanged();
 
+                    final FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                    ft.detach(this);
+                    ft.attach(this);
+                    ft.commit();
 
-                    startActivity(new Intent(getActivity().getApplicationContext(), RankingActivity.class));
-                    getActivity().finish();
                 }else{
                     Toast.makeText(getActivity().getApplicationContext(),
                             getString(R.string.unable_clear), Toast.LENGTH_SHORT).show();
