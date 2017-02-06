@@ -21,7 +21,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Memory.EasyMemoryActivity" />
         <activity android:name=".Memory.MediumMemoryActivity" />
-        <activity android:name=".Memory.HardMemoryActivity"></activity>
+        <activity android:name=".Memory.HardMemoryActivity" />
+        <activity android:name=".Ranking.RankingActivity"></activity>
     </application>
 
 </manifest>

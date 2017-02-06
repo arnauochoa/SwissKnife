@@ -73,7 +73,6 @@ public class RegisterFragment extends Fragment implements View.OnClickListener{
                         intent = new Intent(getActivity(), DrawerActivity.class);
                         startActivity(intent);
                         getActivity().finish();
-
                     }
                 }
                 break;

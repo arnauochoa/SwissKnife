@@ -1,5 +1,8 @@
 package com.ochoa.arnau.swissknife.Memory;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.material.joanbarroso.flipper.CoolImageFlipper;
+import com.ochoa.arnau.swissknife.Data.MemoryHelper;
 import com.ochoa.arnau.swissknife.R;
 
 public class EasyMemoryActivity extends AppCompatActivity implements View.OnClickListener{
@@ -136,7 +140,21 @@ public class EasyMemoryActivity extends AppCompatActivity implements View.OnClic
             attempts = board.getAttempts();
             Toast.makeText(getApplicationContext(), "Congratulations! You did it in " + String.valueOf(attempts) + " attempts", Toast.LENGTH_LONG).show();
             Log.d("WIN","CONGRATULATIONS!!");
+            saveScore(attempts);
         }
+    }
+
+    private void saveScore(int attempts) {
+        MemoryHelper memoryHelper = new MemoryHelper(getApplicationContext());
+
+        SharedPreferences settings = getSharedPreferences(String.valueOf(R.string.app_name), Context.MODE_PRIVATE);
+        String username = settings.getString("username", "Username not found");
+
+        ContentValues valuesToStore = new ContentValues();
+        valuesToStore.put("name", username);
+        valuesToStore.put("level", "easy");
+        valuesToStore.put("score", attempts);
+        memoryHelper.addScore(valuesToStore, "Scores");
     }
 
     private void restart() {

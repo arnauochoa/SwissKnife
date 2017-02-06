@@ -16,10 +16,10 @@ import android.view.MenuItem;
 import com.ochoa.arnau.swissknife.Calculator.CalculatorFragment;
 import com.ochoa.arnau.swissknife.Login_Register.PagerHolderLogin;
 import com.ochoa.arnau.swissknife.Memory.MemoryFragment;
-import com.ochoa.arnau.swissknife.Ranking.RankingFragment;
 import com.ochoa.arnau.swissknife.Music.MusicFragment;
 import com.ochoa.arnau.swissknife.Profile.ProfileFragment;
 import com.ochoa.arnau.swissknife.R;
+import com.ochoa.arnau.swissknife.Ranking.RankingActivity;
 
 public class DrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnFragmentInteractionListener_Main{
 
@@ -67,9 +67,7 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
                         .replace(R.id.fragment_container, new MemoryFragment(), "MEMORY_FRAGMENT").commit();
                 break;
             case R.id.ranking:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, new RankingFragment(), "RANKING_FRAGMENT").commit();
+                startActivity(new Intent(this, RankingActivity.class));
                 break;
             case R.id.music:
                 getSupportFragmentManager()
@@ -87,8 +85,7 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
                 editor.putBoolean("UserLogged", false);
                 editor.apply();
 
-                Intent intent = new Intent(this, PagerHolderLogin.class);
-                startActivity(intent);
+                startActivity(new Intent(this, PagerHolderLogin.class));
                 finish();
                 break;
         }

@@ -106,7 +106,6 @@ public class PagerHolderLogin extends FragmentActivity implements OnFragmentInte
         }else{
             Toast.makeText(getApplicationContext(),getString(R.string.register_not_ok_toast), Toast.LENGTH_SHORT).show();
         }
-
         return validUser;
     }
 }
