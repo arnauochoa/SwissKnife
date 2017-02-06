@@ -17,4 +17,6 @@
     <string name="empty_field">There is an empty field</string>
     <string name="easy_level">easy</string>
     <string name="unable_clear">Sorry, there was an error trying to clear the ranking</string>
+    <string name="scores_table">Scores</string>
+    <string name="score_column">score</string>
 </resources>

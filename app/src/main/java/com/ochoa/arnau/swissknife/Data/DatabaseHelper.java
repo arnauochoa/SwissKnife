@@ -93,14 +93,14 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 values);
     }
 
-    public Cursor getBestScoreByName (String username){
+    public Cursor getBestScoreByName (String username, String level){
         SQLiteDatabase db = this.getWritableDatabase();
         String[] columns = {"score"};
-        String[] where = {username};
+        String[] where = {username, level};
         Cursor c = db.query(
                 SCORES_TABLE,  // The table to query
                 columns,         // The columns to return
-                "name=?",        // The columns for the WHERE clause
+                "name=? AND level=?",        // The columns for the WHERE clause
                 where,           // The values for the WHERE clause
                 null,            // don't group the rows
                 null,            // don't filter by row groups

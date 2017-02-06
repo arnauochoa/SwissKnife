@@ -29,11 +29,13 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
     OnFragmentInteractionListener_Main mListener;
 
-    TextView usernameView, bestScore;
+    TextView usernameView, easyScore, mediumScore, hardScore;
 
     DatabaseHelper databaseHelper;
 
-    int score = 0;
+    int eScore = 0;
+    int mScore = 0;
+    int hScore = 0;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -60,13 +62,28 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
         databaseHelper = new DatabaseHelper(getActivity().getApplicationContext());
 
-        Cursor cursor = databaseHelper.getBestScoreByName(username);
-        if (cursor.moveToFirst()){
-            score = cursor.getInt(cursor.getColumnIndex("score"));
-        }
+        Cursor cursor;
 
-        bestScore = (TextView) rootView.findViewById(R.id.bestScore_editText);
-        bestScore.setText("Best Score: " + String.valueOf(score));
+        cursor = databaseHelper.getBestScoreByName(username, "easy");
+        if (cursor.moveToFirst()){
+            eScore = cursor.getInt(cursor.getColumnIndex("score"));
+        }
+        easyScore = (TextView) rootView.findViewById(R.id.easy_score);
+        easyScore.setText("Easy Score: " + String.valueOf(eScore));
+
+        cursor = databaseHelper.getBestScoreByName(username, "medium");
+        if (cursor.moveToFirst()){
+            mScore = cursor.getInt(cursor.getColumnIndex("score"));
+        }
+        mediumScore = (TextView) rootView.findViewById(R.id.medium_score);
+        mediumScore.setText("Medium Score: " + String.valueOf(mScore));
+
+        cursor = databaseHelper.getBestScoreByName(username, "hard");
+        if (cursor.moveToFirst()){
+            hScore = cursor.getInt(cursor.getColumnIndex("score"));
+        }
+        hardScore = (TextView) rootView.findViewById(R.id.hard_score);
+        hardScore.setText("Hard Score: " + String.valueOf(hScore));
 
         return rootView;
     }

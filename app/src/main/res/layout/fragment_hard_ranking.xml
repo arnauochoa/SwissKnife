@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.ochoa.arnau.swissknife.Ranking.EasyRankingFragment">
+    tools:context="com.ochoa.arnau.swissknife.Ranking.HardRankingFragment"
+    android:orientation="vertical">
 
     <TextView
         android:text="RANKING 4x4"
@@ -36,4 +36,5 @@
         android:layout_marginBottom="66dp"
         android:id="@+id/clear_fab"
         android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
 </LinearLayout>
