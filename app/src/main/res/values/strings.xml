@@ -19,4 +19,10 @@
     <string name="unable_clear">Sorry, there was an error trying to clear the ranking</string>
     <string name="scores_table">Scores</string>
     <string name="score_column">score</string>
+    <string name="medium_level">medium</string>
+    <string name="hard_level">hard</string>
+    <string name="name_column">name</string>
+    <string name="call">Call</string>
+    <string name="toast_notification">Toast Notifications</string>
+    <string name="status_bar_notification">Status Bar Notifications</string>
 </resources>

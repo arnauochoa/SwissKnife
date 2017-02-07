@@ -13,7 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.ochoa.arnau.swissknife.Calculator.CalculatorFragment;
+import com.ochoa.arnau.swissknife.Calculator.CalculatorActivity;
 import com.ochoa.arnau.swissknife.Login_Register.PagerHolderLogin;
 import com.ochoa.arnau.swissknife.Memory.MemoryFragment;
 import com.ochoa.arnau.swissknife.Music.MusicFragment;
@@ -75,9 +75,7 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
                         .replace(R.id.fragment_container, new MusicFragment(), "MUSIC_FRAGMENT").commit();
                 break;
             case R.id.calculator:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, new CalculatorFragment(), "MEMORY_FRAGMENT").commit();
+                startActivity(new Intent(this, CalculatorActivity.class));
                 break;
             case R.id.logout:
                 SharedPreferences settings = getSharedPreferences(String.valueOf(R.string.app_name), 0);

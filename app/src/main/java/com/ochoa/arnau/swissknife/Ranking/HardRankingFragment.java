@@ -24,11 +24,6 @@ import java.util.ArrayList;
  */
 public class HardRankingFragment extends Fragment implements View.OnClickListener{
 
-    private String level = "hard";
-    private String Table = "Scores";
-    private String nameColumn = "name";
-    private String scoreColumn = "score";
-
     FloatingActionButton clearFab;
 
     private RecyclerView recyclerView;
@@ -69,13 +64,13 @@ public class HardRankingFragment extends Fragment implements View.OnClickListene
     }
 
     private void setRanking() {
-        Cursor cursor = databaseHelper.getRankingByLevel(level, Table);
+        Cursor cursor = databaseHelper.getRankingByLevel(getString(R.string.hard_level), getString(R.string.scores_table));
         Player player;
         int pos = 0;
         if (cursor.moveToFirst()) {
             do {
-                String username = cursor.getString(cursor.getColumnIndex(nameColumn));
-                int score = cursor.getInt(cursor.getColumnIndex(scoreColumn));
+                String username = cursor.getString(cursor.getColumnIndex(getString(R.string.name_column)));
+                int score = cursor.getInt(cursor.getColumnIndex(getString(R.string.score_column)));
                 player = new Player(pos, username, score);
                 players.add(player);
                 pos ++;
@@ -87,7 +82,7 @@ public class HardRankingFragment extends Fragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.clear_fab:
-                if (databaseHelper.clearRankingByLevel(level)) {
+                if (databaseHelper.clearRankingByLevel(getString(R.string.hard_level))) {
                     setRanking();
                     adapter.setPlayers(players);
                     adapter.notifyDataSetChanged();

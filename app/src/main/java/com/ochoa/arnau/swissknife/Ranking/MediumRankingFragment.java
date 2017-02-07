@@ -64,13 +64,13 @@ public class MediumRankingFragment extends Fragment implements View.OnClickListe
     }
 
     private void setRanking() {
-        Cursor cursor = databaseHelper.getRankingByLevel(String.valueOf(R.string.easy_level), String.valueOf(R.string.scores_table));
+        Cursor cursor = databaseHelper.getRankingByLevel(getString(R.string.medium_level), getString(R.string.scores_table));
         Player player;
         int pos = 0;
         if (cursor.moveToFirst()) {
             do {
-                String username = cursor.getString(cursor.getColumnIndex(String.valueOf(R.string.score_column)));
-                int score = cursor.getInt(cursor.getColumnIndex(String.valueOf(R.string.score_column)));
+                String username = cursor.getString(cursor.getColumnIndex(getString(R.string.name_column)));
+                int score = cursor.getInt(cursor.getColumnIndex(getString(R.string.score_column)));
                 player = new Player(pos, username, score);
                 players.add(player);
                 pos ++;
@@ -82,7 +82,7 @@ public class MediumRankingFragment extends Fragment implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.clear_fab:
-                if (databaseHelper.clearRankingByLevel(String.valueOf(R.string.easy_level))) {
+                if (databaseHelper.clearRankingByLevel(getString(R.string.medium_level))) {
                     setRanking();
                     adapter.setPlayers(players);
                     adapter.notifyDataSetChanged();
