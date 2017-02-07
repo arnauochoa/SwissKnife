@@ -10,15 +10,31 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ochoa.arnau.swissknife.Data.DatabaseHelper;
 import com.ochoa.arnau.swissknife.Main_Drawer.DrawerActivity;
 import com.ochoa.arnau.swissknife.R;
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.Callback;
+import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.core.TwitterException;
+import com.twitter.sdk.android.core.TwitterSession;
+import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+
+import io.fabric.sdk.android.Fabric;
 
 
 public class PagerHolderLogin extends FragmentActivity implements OnFragmentInteractionListener {
+
+    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
+    private static final String TWITTER_KEY = "25YYvET2Ci9R0TNAATVvUfK2K";
+    private static final String TWITTER_SECRET = "Rgfrxf0AJ8thcsAl4Lwwwuyjn3jKIodmirD8cqjH7k6Je0jZv3";
+
+    private TwitterLoginButton loginButton;
 
     DatabaseHelper databaseHelper;
     SharedPreferences settings;
@@ -26,6 +42,8 @@ public class PagerHolderLogin extends FragmentActivity implements OnFragmentInte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        Fabric.with(this, new Twitter(authConfig));
         setContentView(R.layout.activity_pager_holder_login);
 
         // Get the ViewPager and set it's PagerAdapter so that it can display items
@@ -41,9 +59,38 @@ public class PagerHolderLogin extends FragmentActivity implements OnFragmentInte
 
         databaseHelper = new DatabaseHelper(getApplicationContext());
 
+        loginButton = (TwitterLoginButton) findViewById(R.id.twitter_login_button);
+        loginButton.setCallback(new Callback<TwitterSession>() {
+            @Override
+            public void success(Result<TwitterSession> result) {
+                TwitterSession session = result.data;
+
+                SharedPreferences settings = getSharedPreferences(String.valueOf(R.string.app_name), 0);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("username", session.getUserName());
+                editor.apply();
+
+                startActivity(new Intent(getApplicationContext(), DrawerActivity.class));
+                finish();
+
+            }
+            @Override
+            public void failure(TwitterException exception) {
+                Log.d("TwitterKit", "Login with Twitter failure", exception);
+            }
+        });
+
+
         settings = getSharedPreferences(String.valueOf(R.string.app_name), Context.MODE_PRIVATE);
         checkLogIn();
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        loginButton.onActivityResult(requestCode, resultCode, data);
+    }
+
 
     private void checkLogIn() {
         boolean UserLogged = settings.getBoolean("UserLogged", false);
@@ -101,6 +148,10 @@ public class PagerHolderLogin extends FragmentActivity implements OnFragmentInte
             valuesToStore.put("name", String.valueOf(username.getText().toString()));
             valuesToStore.put("password", String.valueOf(password.getText().toString()));
             databaseHelper.createUser(valuesToStore, "Users");
+
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putBoolean("UserLogged", true);
+            editor.apply();
 
             Toast.makeText(getApplicationContext(),getString(R.string.register_ok_toast), Toast.LENGTH_SHORT).show();
         }else{

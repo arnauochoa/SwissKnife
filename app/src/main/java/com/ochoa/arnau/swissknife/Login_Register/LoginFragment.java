@@ -75,7 +75,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
                         editor.apply();
 
                         Intent intent;
-                        intent = new Intent(getActivity(), PagerHolderLogin.class);
+                        intent = new Intent(getActivity(), DrawerActivity.class);
                         startActivity(intent);
                         getActivity().finish();
                     } else {

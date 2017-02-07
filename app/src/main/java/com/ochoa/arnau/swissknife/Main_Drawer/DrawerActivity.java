@@ -16,7 +16,7 @@ import android.view.MenuItem;
 import com.ochoa.arnau.swissknife.Calculator.CalculatorActivity;
 import com.ochoa.arnau.swissknife.Login_Register.PagerHolderLogin;
 import com.ochoa.arnau.swissknife.Memory.MemoryFragment;
-import com.ochoa.arnau.swissknife.Music.MusicFragment;
+import com.ochoa.arnau.swissknife.Music.MusicActivity;
 import com.ochoa.arnau.swissknife.Profile.ProfileFragment;
 import com.ochoa.arnau.swissknife.R;
 import com.ochoa.arnau.swissknife.Ranking.RankingActivity;
@@ -70,9 +70,7 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
                 startActivity(new Intent(this, RankingActivity.class));
                 break;
             case R.id.music:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, new MusicFragment(), "MUSIC_FRAGMENT").commit();
+                startActivity(new Intent(this, MusicActivity.class));
                 break;
             case R.id.calculator:
                 startActivity(new Intent(this, CalculatorActivity.class));
