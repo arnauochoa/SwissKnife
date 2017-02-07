@@ -22,7 +22,7 @@ public class RankingActivity extends AppCompatActivity {
         Fragment fragment = new EasyRankingFragment();
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.rankin_container, fragment)
+                .replace(R.id.ranking_container, fragment)
                 .commit();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(
@@ -43,7 +43,7 @@ public class RankingActivity extends AppCompatActivity {
                         }
                         getSupportFragmentManager()
                                 .beginTransaction()
-                                .replace(R.id.fragment_container,f)
+                                .replace(R.id.ranking_container,f)
                                 .commit();
                         return true;
                     }

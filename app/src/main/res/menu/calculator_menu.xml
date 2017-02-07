@@ -7,8 +7,14 @@
         app:showAsAction="always"
         android:icon="@drawable/ic_call_black_24dp"/>
 
+    <item android:id="@+id/explorer"
+        android:title="@string/explorer"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_public_black_24dp"/>
+
     <item android:id="@+id/toast"
         android:title="@string/toast_notification"/>
+
     <item android:id="@+id/status_bar"
         android:title="@string/status_bar_notification"/>
 

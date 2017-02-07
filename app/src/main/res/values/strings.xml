@@ -25,4 +25,7 @@
     <string name="call">Call</string>
     <string name="toast_notification">Toast Notifications</string>
     <string name="status_bar_notification">Status Bar Notifications</string>
+    <string name="explorer">Explorer</string>
+    <string name="division_0">That\'s infinity!</string>
+    <string name="division_0_by_0">That\'s indeterminate. Ask Siri.</string>
 </resources>

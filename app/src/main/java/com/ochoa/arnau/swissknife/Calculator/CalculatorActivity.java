@@ -1,12 +1,14 @@
 package com.ochoa.arnau.swissknife.Calculator;
 
-import android.Manifest;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -16,12 +18,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ochoa.arnau.swissknife.R;
 
 public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button button_1, button_2, button_3, button_4, button_5, button_6, button_7, button_8, button_9, button_0, button_point, button_equals;
+    TextView operationsText;
 
     String x, t; //prova girar pantalla
 
@@ -40,6 +44,8 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        operationsText = (TextView) findViewById(R.id.textView);
 
         button_1 = ((Button) findViewById(R.id.button_1));
         button_1.setOnClickListener(this);
@@ -103,26 +109,21 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         SharedPreferences.Editor editor = settings.edit();
+        Intent intent;
         switch (item.getItemId()) {
             case R.id.call:
-                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:123456789"));
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-//                       public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//                                                              int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                }
+                intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:123456789"));
                 startActivity(intent);
                 return true;
+            case R.id.explorer:
+                intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://sites.google.com/jediupc.com/andqt2017tardes"));
             case R.id.toast:
                 editor.putString("notifications", "toast");
                 editor.apply();
                 return true;
             case R.id.status_bar:
-                editor.putString("notifications", "toast");
+                editor.putString("notifications", "status");
                 editor.apply();
                 return true;
         }
@@ -131,55 +132,61 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        TextView text = (TextView) findViewById(R.id.textView);
         switch (v.getId()){
             case R.id.button_1:
                 b=b*10+1;
-                text.setText(String.valueOf(b));
+                operationsText.setText(String.valueOf(b));
                 break;
             case R.id.button_2:
                 b=b*10+2;
-                text.setText(String.valueOf(b));
+                operationsText.setText(String.valueOf(b));
                 break;
             case R.id.button_3:
                 b=b*10+3;
-                text.setText(String.valueOf(b));
+                operationsText.setText(String.valueOf(b));
                 break;
             case R.id.button_4:
                 b=b*10+4;
-                text.setText(String.valueOf(b));
+                operationsText.setText(String.valueOf(b));
                 break;
             case R.id.button_5:
                 b=b*10+5;
-                text.setText(String.valueOf(b));
+                operationsText.setText(String.valueOf(b));
                 break;
             case R.id.button_6:
                 b=b*10+6;
-                text.setText(String.valueOf(b));
+                operationsText.setText(String.valueOf(b));
                 break;
             case R.id.button_7:
                 b=b*10+7;
-                text.setText(String.valueOf(b));
+                operationsText.setText(String.valueOf(b));
                 break;
             case R.id.button_8:
                 b=b*10+8;
-                text.setText(String.valueOf(b));
+                operationsText.setText(String.valueOf(b));
                 break;
             case R.id.button_9:
                 b=b*10+9;
-                text.setText(String.valueOf(b));
+                operationsText.setText(String.valueOf(b));
                 break;
             case R.id.button_0:
                 b=b*10;
-                text.setText(String.valueOf(b));
+                operationsText.setText(String.valueOf(b));
                 break;
             case R.id.button_point:
-                //TODO ver como hacer decimales
                 break;
             case R.id.button_equals:
                 switch (operation){
                     case "div":
-                        res=a/b;
+                        if(b == 0){
+                            if (a==0){
+                                notification(getString(R.string.division_0_by_0));
+                            }else{
+                                notification(getString(R.string.division_0 ));
+                            }
+                        }else{
+                            res=a/b;
+                        }
                         break;
                     case "prod":
                         res=a*b;
@@ -190,13 +197,13 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                     case "sum":
                         res=a+b;
                 }
-                a=b=0;
-                text.setText(String.valueOf(res));
+                a = 0;
+                b = res;
+                operationsText.setText(String.valueOf(res));
                 break;
             case R.id.button_CE:
                 a=b=0;
-                text.setText("");
-                //TODO split para separar entre coma
+                operationsText.setText("");
                 break;
             case R.id.button_div:
                 a=b;
@@ -222,17 +229,79 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
     }
 
+    private void notification(String string) {
+        String notifications = settings.getString("notifications", "error");
+
+        if (notifications.equals("toast")){
+
+            Toast.makeText(getApplicationContext(), string, Toast.LENGTH_SHORT).show();
+
+        }else if (notifications.equals("status")){
+
+            int mId = 2;
+            NotificationManager mNotificationManager =
+                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+            NotificationCompat.Builder mBuilder =
+                    new NotificationCompat.Builder(getApplicationContext())
+                            .setSmallIcon(R.drawable.app_logo)
+                            .setContentTitle(getString(R.string.app_name))
+                            .setContentText(string);
+
+            Intent resultIntent = new Intent(getApplicationContext(), CalculatorActivity.class);
+
+            TaskStackBuilder stackBuilder2 = TaskStackBuilder.create(getApplicationContext());
+            stackBuilder2.addParentStack(CalculatorActivity.class);
+            stackBuilder2.addNextIntent(resultIntent);
+
+            PendingIntent resultPendingIntent =
+                    stackBuilder2.getPendingIntent(
+                            1,
+                            PendingIntent.FLAG_UPDATE_CURRENT
+                    );
+            mBuilder.setContentIntent(resultPendingIntent);
+
+            Notification noti = mBuilder.build();
+
+            long [] vibrate = {500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500};
+
+            noti.vibrate = vibrate;
+
+            noti.flags |= Notification.FLAG_SHOW_LIGHTS;
+            mNotificationManager.notify(mId, noti);
+        }
+    }
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("test", x);
-        Log.v("Test","onSaveInstanceState: " + x);
+        outState.putString("operations", operationsText.getText().toString());
+        outState.putString("operation", operation);
+        outState.putFloat("a", a);
+        outState.putFloat("b", b);
+        outState.putFloat("res", res);
+
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        t = savedInstanceState.getString("test");
-        Log.v("Test","onRestoreInstanceState: " + t);
+        operationsText.setText(savedInstanceState.getString("operations"));
+        operation = savedInstanceState.getString("operation");
+        a = savedInstanceState.getFloat("a");
+        b = savedInstanceState.getFloat("b");
+        res = savedInstanceState.getFloat("res");
+
     }
+
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        this.finish();
+//    }
 }

@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:text="RANKING 4x4"
+        android:text="RANKING 8x8"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textStyle="bold"
@@ -23,7 +23,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:layout_marginLeft="16dp"
         android:id="@+id/recycler_view">
 
     </android.support.v7.widget.RecyclerView>
