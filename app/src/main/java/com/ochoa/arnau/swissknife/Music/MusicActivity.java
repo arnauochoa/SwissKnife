@@ -19,14 +19,14 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
 
     Boolean playing = false;
 
-    BoundService bService;
+    MusicService bService;
     boolean bound = false;
     Intent intent;
 
     private ServiceConnection connection = new ServiceConnection(){
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder binder) {
-            BoundService.MyBinder mBinder = (BoundService.MyBinder) binder;
+            MusicService.MyBinder mBinder = (MusicService.MyBinder) binder;
             bService = mBinder.getService();
             bound = true;
             Log.d("service", "onServiceConnected: SERVICE CONNECTED");
@@ -53,7 +53,7 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
         buttonStop = (ImageButton) findViewById(R.id.stopButton);
         buttonStop.setOnClickListener(this);
 
-        intent = new Intent(MusicActivity.this, BoundService.class);
+        intent = new Intent(MusicActivity.this, MusicService.class);
         bindService(intent, connection, Context.BIND_AUTO_CREATE);
 
     }

@@ -12,7 +12,6 @@ import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,7 +44,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        operationsText = (TextView) findViewById(R.id.textView);
+        operationsText = (TextView) findViewById(R.id.location);
 
         button_1 = ((Button) findViewById(R.id.button_1));
         button_1.setOnClickListener(this);

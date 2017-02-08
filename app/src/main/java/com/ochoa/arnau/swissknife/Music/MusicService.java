@@ -8,19 +8,17 @@ import android.os.IBinder;
 
 import com.ochoa.arnau.swissknife.R;
 
-import java.io.IOException;
-
 /**
  * Created by arnau on 07/02/2017.
  */
-public class BoundService extends Service {
+public class MusicService extends Service {
     private final IBinder binder = new MyBinder();
 
     MediaPlayer mediaPlayer;
 
     public class MyBinder extends Binder {
-        BoundService getService() {
-            return BoundService.this;
+        MusicService getService() {
+            return MusicService.this;
         }
     }
 

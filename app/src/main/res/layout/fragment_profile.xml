@@ -151,16 +151,30 @@
                             android:layout_weight="3"
                             android:layout_marginBottom="20dp">
 
-                            <TextView
-                                android:text="Location: Barcelona"
+                            <LinearLayout
+                                android:orientation="vertical"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/location_TextView"
-                                android:layout_marginLeft="30dp"
-                                android:layout_marginRight="10dp"
-                                android:gravity="center"
-                                android:layout_weight="1.5"
-                                android:layout_gravity="center" />
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:text="Location: "
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/location_TextView"
+                                    android:layout_marginRight="10dp"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.5" />
+
+                                <TextView
+                                    android:text="Barcelona"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="30dp"
+                                    android:id="@+id/address" />
+
+                            </LinearLayout>
 
                             <ImageButton
                                 android:layout_width="wrap_content"

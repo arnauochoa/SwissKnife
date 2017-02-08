@@ -13,7 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.ochoa.arnau.swissknife.Main_Drawer.DrawerActivity;
+import com.ochoa.arnau.swissknife.Profile.User;
 import com.ochoa.arnau.swissknife.R;
+
+import io.realm.Realm;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +29,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
     Button login_button;
 
     OnFragmentInteractionListener mListener;
+
+    Realm realm = Realm.getDefaultInstance();
 
     public LoginFragment(){
         // Required empty public constructor
@@ -43,6 +48,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
 
         login_button = (Button) rootView.findViewById(R.id.login_button);
         login_button.setOnClickListener(this);
+
+        realm = Realm.getDefaultInstance();
 
         return rootView;
 
@@ -73,6 +80,14 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
                         SharedPreferences.Editor editor = settings.edit();
                         editor.putString("username", String.valueOf(username.getText().toString()));
                         editor.apply();
+
+
+                        User user = new User();
+                        user.setName(String.valueOf(username.getText().toString()));
+
+                        realm.beginTransaction();
+                        realm.copyToRealmOrUpdate(user);
+                        realm.commitTransaction();
 
                         Intent intent;
                         intent = new Intent(getActivity(), DrawerActivity.class);

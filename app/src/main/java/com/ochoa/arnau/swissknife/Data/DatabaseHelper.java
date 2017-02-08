@@ -29,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
     //sentencia global de cracion de la base de datos
     public static final String USERS_TABLE_CREATE = "CREATE TABLE " + USERS_TABLE +
-            " (name TEXT PRIMARY KEY UNIQUE, password TEXT);";
+            " (name TEXT PRIMARY KEY UNIQUE, password TEXT, address TEXT, image TEXT);";
 
     //sentencia global de creacion de la base de datos
     public static final String SCORES_TABLE_CREATE = "CREATE TABLE " + SCORES_TABLE +
