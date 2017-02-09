@@ -81,7 +81,7 @@ public class LocationActivity extends AppCompatActivity implements View.OnClickL
 
             @Override
             public void onLocationChanged(Location location) {
-                // TODO Auto-generated method stub
+
                 Geocoder gc = new Geocoder(getApplicationContext());
                 try {
                     addressList = gc.getFromLocation(location.getLatitude(),
@@ -114,13 +114,11 @@ public class LocationActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     protected void onPause() {
-        // TODO Auto-generated method stub
         super.onPause();
     }
 
     @Override
     protected void onResume() {
-        // TODO Auto-generated method stub
         super.onResume();
     }
 

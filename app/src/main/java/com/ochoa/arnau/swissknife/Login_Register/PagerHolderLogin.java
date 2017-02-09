@@ -54,7 +54,7 @@ public class PagerHolderLogin extends FragmentActivity implements OnFragmentInte
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
 
         //normal color - selected color
-        tabLayout.setTabTextColors(Color.GRAY, Color.BLACK); // TODO: canviar colors
+        tabLayout.setTabTextColors(Color.GRAY, Color.BLACK);
         tabLayout.setupWithViewPager(viewPager);
 
         databaseHelper = new DatabaseHelper(getApplicationContext());
