@@ -1,37 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_music"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ochoa.arnau.swissknife.Music.MusicActivity">
 
-    <ImageButton
-        android:layout_width="wrap_content"
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_media_play"
-        android:layout_alignParentTop="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="96dp"
-        android:id="@+id/playButton" />
+        android:id="@+id/cardView">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_media_pause"
-        android:layout_below="@+id/playButton"
-        android:layout_alignStart="@+id/playButton"
-        android:layout_marginTop="66dp"
-        android:id="@+id/pauseButton" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_remove_circle_black_24dp"
-        android:layout_marginTop="60dp"
-        android:id="@+id/stopButton"
-        android:layout_below="@+id/pauseButton"
-        android:layout_alignStart="@+id/pauseButton"
-        android:layout_alignEnd="@+id/pauseButton" />
+            <TextView
+                android:text="Listen to the Best"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:id="@+id/title" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_play"
+                    android:id="@+id/playButton"
+                    android:layout_weight="1"
+                    android:clickable="true"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_stop"
+                    android:id="@+id/stopButton"
+                    android:layout_weight="1"
+                    android:clickable="true"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.ochoa.arnau.swissknife.Main_Drawer;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.ochoa.arnau.swissknife.Calculator.CalculatorActivity;
 import com.ochoa.arnau.swissknife.Login_Register.PagerHolderLogin;
@@ -23,6 +25,8 @@ import com.ochoa.arnau.swissknife.Ranking.RankingActivity;
 
 public class DrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnFragmentInteractionListener_Main{
 
+    DrawerLayout drawerLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,13 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        NavigationView navigationView =(NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        TextView usernameDrawer = (TextView) navigationView.getHeaderView(0).findViewById(R.id.username_drawer);
+        SharedPreferences settings = getSharedPreferences(String.valueOf(R.string.app_name), Context.MODE_PRIVATE);
+        String username = settings.getString("username", "Username not found");
+        usernameDrawer.setText(username);
 
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -41,9 +52,6 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
         );
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
-
-        NavigationView navigationView =(NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
         Fragment f = new ProfileFragment();
         getSupportFragmentManager()
@@ -61,7 +69,6 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
                         .replace(R.id.fragment_container, new ProfileFragment(), "PROFILE_FRAGMENT").commit();
                 break;
             case R.id.memory:
-                Log.d("Drawer", "onNavigationItemSelected: memory");
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, new MemoryFragment(), "MEMORY_FRAGMENT").commit();

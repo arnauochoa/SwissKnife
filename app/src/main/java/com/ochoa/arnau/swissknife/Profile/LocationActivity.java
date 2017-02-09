@@ -84,7 +84,6 @@ public class LocationActivity extends AppCompatActivity implements View.OnClickL
                 // TODO Auto-generated method stub
                 Geocoder gc = new Geocoder(getApplicationContext());
                 try {
-                    //5 mxresults
                     addressList = gc.getFromLocation(location.getLatitude(),
                             location.getLongitude(), 5);
                 } catch (IOException e) {

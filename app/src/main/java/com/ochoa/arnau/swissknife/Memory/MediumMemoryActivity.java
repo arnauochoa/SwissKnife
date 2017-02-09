@@ -85,26 +85,26 @@ public class MediumMemoryActivity extends AppCompatActivity implements View.OnCl
             cardView.setOnClickListener(this);
         }
 
-        cardBack = R.drawable.ic_black_jack;
+        cardBack = R.drawable.app_logo;
 
-        drawables[0] = R.drawable.ic_adb_black_24dp;
-        drawables[1] = R.drawable.ic_android_black_24dp;
-        drawables[2] = R.drawable.ic_cake_black_24dp;
-        drawables[3] = R.drawable.ic_diamonf;
-        drawables[4] = R.drawable.ic_directions_boat_black_24dp;
-        drawables[5] = R.drawable.ic_gambler;
-        drawables[6] = R.drawable.ic_mood_black_24dp;
-        drawables[7] = R.drawable.ic_playing_cards;
-        drawables[8] = R.drawable.ic_assistant_photo_black_24dp;
-        drawables[9] = R.drawable.ic_attach_file_black_24dp;
-        drawables[10] = R.drawable.ic_audiotrack_black_24dp;
-        drawables[11] = R.drawable.ic_check_box_black_24dp;
-        drawables[12] = R.drawable.ic_functions_black_24dp;
-        drawables[13] = R.drawable.ic_indeterminate_check_box_black_24dp;
-        drawables[14] = R.drawable.ic_local_taxi_black_24dp;
-        drawables[15] = R.drawable.ic_photo_size_select_actual_black_24dp;
-        drawables[16] = R.drawable.ic_star_border_black_24dp;
-        drawables[17] = R.drawable.ic_public_black_24dp;
+        drawables[0] = R.drawable.ic_angry;
+        drawables[1] = R.drawable.ic_angry_1;
+        drawables[2] = R.drawable.ic_bored;
+        drawables[3] = R.drawable.ic_bored_1;
+        drawables[4] = R.drawable.ic_bored_2;
+        drawables[5] = R.drawable.ic_confused;
+        drawables[6] = R.drawable.ic_confused_1;
+        drawables[7] = R.drawable.ic_crying;
+        drawables[8] = R.drawable.ic_crying_1;
+        drawables[9] = R.drawable.ic_embarrassed;
+        drawables[10] = R.drawable.ic_emoticons;
+        drawables[11] = R.drawable.ic_happy;
+        drawables[12] = R.drawable.ic_happy_1;
+        drawables[13] = R.drawable.ic_happy_2;
+        drawables[14] = R.drawable.ic_ill;
+        drawables[15] = R.drawable.ic_in_love;
+        drawables[16] = R.drawable.ic_kissing;
+        drawables[17] = R.drawable.ic_mad;
 
 
         flipper = new CoolImageFlipper(this);

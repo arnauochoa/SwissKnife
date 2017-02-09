@@ -10,12 +10,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.ochoa.arnau.swissknife.R;
 
 public class MusicActivity extends AppCompatActivity implements View.OnClickListener{
 
-    ImageButton buttonPlay, buttonPause, buttonStop;
+    ImageView buttonPlay, buttonStop;
 
     Boolean playing = false;
 
@@ -44,13 +45,10 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
-        buttonPlay = (ImageButton) findViewById(R.id.playButton);
+        buttonPlay = (ImageView) findViewById(R.id.playButton);
         buttonPlay.setOnClickListener(this);
 
-        buttonPause = (ImageButton) findViewById(R.id.pauseButton);
-        buttonPause.setOnClickListener(this);
-
-        buttonStop = (ImageButton) findViewById(R.id.stopButton);
+        buttonStop = (ImageView) findViewById(R.id.stopButton);
         buttonStop.setOnClickListener(this);
 
         intent = new Intent(MusicActivity.this, MusicService.class);
@@ -66,18 +64,18 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
                 if(!playing && bound){
                     bService.play();
                     playing = true;
-                }
-                break;
-            case R.id.pauseButton:
-                if(playing && bound){
+                    buttonPlay.setImageResource(R.drawable.ic_pause);
+                }else if(playing && bound){
                     bService.pause();
                     playing = false;
+                    buttonPlay.setImageResource(R.drawable.ic_play);
                 }
                 break;
             case R.id.stopButton:
                 if(playing && bound) {
                     bService.stop();
                     playing = false;
+                    buttonPlay.setImageResource(R.drawable.ic_play);
                 }
                 break;
         }

@@ -58,82 +58,106 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card0"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card1"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card2"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card3"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card4"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card5"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card6"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card7"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -145,82 +169,106 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card8"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card9"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card10"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card11"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card12"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card13"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card14"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card15"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -232,82 +280,106 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card16"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card17"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card18"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card19"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card20"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card21"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card22"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card23"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -319,82 +391,106 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card24"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card25"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card26"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card27"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card28"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card29"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card30"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card31"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -406,74 +502,98 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card32"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card33"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card34"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card35"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card36"
                 android:layout_weight="1"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card37"
                 android:layout_weight="1"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card38"
                 android:layout_weight="1"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card39"
                 android:layout_weight="1"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -485,82 +605,106 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card40"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card41"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card42"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card43"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card44"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card45"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card46"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card47"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -572,82 +716,106 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card48"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card49"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card50"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card51"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card52"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card53"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card54"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card55"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -659,82 +827,106 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card56"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card57"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card58"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card59"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card60"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card61"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card62"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_black_jack"
+                android:src="@drawable/app_logo"
                 android:id="@+id/card63"
                 android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:clickable="true" />
+                android:clickable="true"
+                android:elevation="2dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -11,11 +11,11 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name=".MyApp"
         android:theme="@style/AppTheme">
         <activity android:name=".Login_Register.PagerHolderLogin">
             <intent-filter>
@@ -50,7 +50,7 @@
             android:value="f15f80628b62aeb50253594a9335b40eda9ad3b4" />
 
         <activity android:name=".Music.MusicActivity" />
-        <activity android:name=".Profile.LocationActivity"></activity>
+        <activity android:name=".Profile.LocationActivity" />
     </application>
 
 </manifest>

@@ -3,6 +3,7 @@ package com.ochoa.arnau.swissknife.Memory;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -65,16 +66,16 @@ public class EasyMemoryActivity extends AppCompatActivity implements View.OnClic
             cardView.setOnClickListener(this);
         }
 
-        cardBack = R.drawable.ic_black_jack;
+        cardBack = R.drawable.app_logo;
 
-        drawables[0] = R.drawable.ic_adb_black_24dp;
-        drawables[1] = R.drawable.ic_android_black_24dp;
-        drawables[2] = R.drawable.ic_cake_black_24dp;
-        drawables[3] = R.drawable.ic_diamonf;
-        drawables[4] = R.drawable.ic_directions_boat_black_24dp;
-        drawables[5] = R.drawable.ic_gambler;
-        drawables[6] = R.drawable.ic_mood_black_24dp;
-        drawables[7] = R.drawable.ic_playing_cards;
+        drawables[0] = R.drawable.ic_angry;
+        drawables[1] = R.drawable.ic_angry_1;
+        drawables[2] = R.drawable.ic_bored;
+        drawables[3] = R.drawable.ic_bored_1;
+        drawables[4] = R.drawable.ic_bored_2;
+        drawables[5] = R.drawable.ic_confused;
+        drawables[6] = R.drawable.ic_confused_1;
+        drawables[7] = R.drawable.ic_crying;
 
         flipper = new CoolImageFlipper(this);
 

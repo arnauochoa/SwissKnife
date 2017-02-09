@@ -27,13 +27,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/colorPrimary"
                 android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
                 android:text="This is your current location:"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Location"
+                android:text="Loading location..."
                 android:id="@+id/location"
                 android:layout_weight="1"/>
 
@@ -41,10 +43,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_gravity="center"
                 android:text="Do you want to save it?"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"/>
 
             <LinearLayout
                 android:orientation="horizontal"
