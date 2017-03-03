@@ -54,6 +54,7 @@ public class Board {
 
         pairs = drawables.length;
 
+
         values = new Integer[2*pairs];
         cards = new Card[values.length];
         setCards();
